@@ -47,10 +47,9 @@ def getTypeStrength(hand, part):
 def isStronger(hand1, hand2, part):
     # if both hand are the same type
     # proceed to check which is stronger by checking card from left to right
-    if part == 1:
-        strength_map = {"2":2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9, "T":10, "J":11, "Q":12, "K":13, "A":14}
-    elif part == 2:
-        strength_map = {"2":2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9, "T":10, "J":1, "Q":12, "K":13, "A":14}
+    strength_map = {"2":2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9, "T":10, "J":11, "Q":12, "K":13, "A":14}
+    if part == 2:
+        strength_map["J"] = 1
     for i in range(len(hand1)):
         if strength_map[hand1[i]] > strength_map[hand2[i]]:
             return True
