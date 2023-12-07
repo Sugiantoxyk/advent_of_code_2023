@@ -1,4 +1,11 @@
-import sys
+
+class Node:
+    def __init__(self, hand, bid, type_strength):
+        self.hand = hand
+        self.bid = int(bid)
+        self.type_strength = type_strength
+        self.left = None
+        self.right = None
 
 def getTypeStrength(hand, part):
     # use a list to accumulate the counter of each card appear in the hand
@@ -36,14 +43,6 @@ def getTypeStrength(hand, part):
                 strength += 1
     
     return strength
-
-class Node:
-    def __init__(self, hand, bid, type_strength):
-        self.hand = hand
-        self.bid = int(bid)
-        self.type_strength = type_strength
-        self.left = None
-        self.right = None
 
 def isStronger(hand1, hand2, part):
     # if both hand are the same type
