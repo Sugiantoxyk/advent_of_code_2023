@@ -70,7 +70,6 @@ def calculateBid(node, rank):
     return sum, rank
 
 def getWinnings(lines, part):
-    # part 1
     hand_bid_pairs = lines.split("\n")
     
     # tree sort
