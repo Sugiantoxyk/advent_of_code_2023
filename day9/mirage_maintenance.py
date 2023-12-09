@@ -6,10 +6,13 @@ def analize(lines, part):
         dataset = line.strip().split(" ")
         end_values = []
         
+        # collecting all the end values into variable 'end_values' until sequence is all 0
         while not all(v == 0 for v in dataset):
             if part == 1:
+                # part 1: collect only the last values of each sequence
                 end_values.append(int(dataset[-1]))
             elif part == 2:
+                # part 2: collect only the first values of each sequence
                 end_values.append(int(dataset[0]))
             new_dataset = []
             for i in range(len(dataset)-1):
@@ -17,9 +20,12 @@ def analize(lines, part):
                 new_dataset.append(diff)
             dataset = new_dataset
         
+        # extrapolated portion
         if part == 1:
+            # part 1: just add up all the end values for each row
             total += sum(end_values)
         elif part == 2:
+            # part 2: alternating minus/add the end values for each row
             new_value = end_values[0]
             temp = 1
             for val in end_values[1:]:
