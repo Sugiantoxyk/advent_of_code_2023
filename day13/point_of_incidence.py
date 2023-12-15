@@ -2,7 +2,7 @@
 def differenceCount(line1, line2):
     return (sum(i != j for i, j in zip(line1, line2)))
 
-def rotateMap(lines):
+def transposeMap(lines):
     return [''.join(row[i] for row in lines) for i in range(len(lines[0]))]
 
 def checkHorMirror(lines, i, i2, part):
@@ -47,7 +47,7 @@ def findMirror(inp, part):
         rSum *= 100
         
         if rSum == 0:
-            rotatedLines = rotateMap(lines)
+            rotatedLines = transposeMap(lines)
             # find vertical mirror
             rSum = findHorMirror(rotatedLines, part)
             
