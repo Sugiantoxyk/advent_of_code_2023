@@ -49,9 +49,9 @@ def part2(widen_map, start, row, middle):
     # level 3 (65 + 131 * 3 steps): 179940 plots
     # let n be level number and f(n) be the plots,
     # n = f(n-1) + (n * 29310) + 120 
-    plots = 3720 # at 65 steps
-    multi = 29310
-    constant = 120
+    plots = ans[0] # at 65 steps
+    constant = ans[0] - stepCounter(widen_map, start, 64)
+    multi = ans[1] - ans[0] - constant
     iteration = int((26501365-middle)/row)
     for i in range(iteration):
         plots += (i+1)*multi + constant
